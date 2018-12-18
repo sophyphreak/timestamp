@@ -10,7 +10,7 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-app.get("/api/timestamp", (req, res) => {
+app.get("/api", (req, res) => {
   const myDate = new Date();
   const returnedObj = {
     unix: myDate.getTime(),
@@ -19,7 +19,7 @@ app.get("/api/timestamp", (req, res) => {
   res.send(returnedObj);
 });
 
-app.get("/api/timestamp/:dateString", (req, res) => {
+app.get("/api/:dateString", (req, res) => {
   const dateString = req.params.dateString;
   var returnedObj;
   
